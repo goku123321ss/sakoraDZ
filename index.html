@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر sakora DZ الاحترافي</title>
+    
+    <style>
+        /* خلفية سوداء وتأثير النجوم الحمراء الكبيرة المتحركة لمتجر sakora DZ */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #000000; 
+            margin: 0; 
+            padding: 10px; 
+            text-align: center; 
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            background-image: 
+                radial-gradient(#fe2c55 5px, transparent 6px),
+                radial-gradient(#ff003c 6px, transparent 7px),
+                radial-gradient(#b30027 4px, transparent 5px);
+            background-size: 600px 600px;
+            background-position: 0 0, 200px 300px, 400px 450px;
+            animation: moveStars 10s linear infinite;
+            z-index: 1;
+            opacity: 0.85;
+        }
+
+        @keyframes moveStars {
+            from { transform: translateY(0); }
+            to { transform: translateY(600px); }
+        }
+
+        .container { 
+            max-width: 480px; 
+            background: rgba(15, 15, 15, 0.95); 
+            margin: 20px auto; 
+            padding: 25px; 
+            border-radius: 20px; 
+            box-shadow: 0 4px 30px rgba(254, 44, 85, 0.4); 
+            border: 2px solid #fe2c55;
+            color: #ffffff;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo-area {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #fe2c55;
+            object-fit: cover;
+            box-shadow: 0 0 10px #fe2c55;
+        }
+
+        h1 { color: #fe2c55; margin-top: 40px; margin-bottom: 5px; text-shadow: 0 0 15px rgba(254, 44, 85, 0.6); font-size: 28px; }
+        h3 { color: #ffffff; margin-bottom: 15px; }
+        p { color: #cccccc; font-size: 15px; }
+
+        input { 
+            width: 90%; 
+            padding: 14px; 
+            margin: 12px 0; 
+            border: 1px solid #fe2c55; 
+            border-radius: 10px; 
+            font-size: 16px; 
+            text-align: center; 
+            background: #111;
+            color: #fff;
+        }
+        input:focus { outline: none; box-shadow: 0 0 10px #fe2c55; }
+
+        button { 
+            width: 95%; 
+            padding: 14px; 
+            background-color: #fe2c55; 
+            color: white; 
+            border: none; 
+            border-radius: 10px; 
+            font-size: 17px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            transition: 0.3s;
+        }
+        button:hover { background-color: #e11d43; box-shadow: 0 0 15px #fe2c55; }
+        
+        .box { background: #161616; border: 1px dashed #fe2c55; padding: 15px; border-radius: 12px; margin: 20px 0; }
+        .hidden { display: none; }
+        
+        .points-box {
+            background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+            border: 2px solid #25d366;
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.2);
+        }
+        .points-title { font-size: 18px; font-weight: bold; color: #ffffff; margin: 0; display: inline-block; }
+        .points-badge { font-size: 26px; color: #25d366; font-weight: bold; display: inline-block; margin-right: 10px; }
+        
+        .account-card { 
+            background: #090909; 
+            border: 2px solid #fe2c55; 
+            padding: 15px; 
+            border-radius: 15px; 
+            margin-top: 15px;
+            box-shadow: 0 0 20px rgba(254, 44, 85, 0.3);
+        }
+        .account-img {
+            width: 100%;
+            height: auto;
+            max-height: 380px; 
+            object-fit: contain;
+            border-radius: 10px;
+            border: 1px solid #222;
+            margin-bottom: 15px;
+            background-color: #111;
+        }
+        .price-tag {
+            font-size: 24px;
+            color: #ffca28;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(255, 202, 40, 0.4);
+        }
+        .timer-badge { font-size: 26px; font-weight: bold; color: #fe2c55; margin: 15px 0; }
+    </style>
+</head>
+<body>
+
+<div class="container" id="main-container">
+    <img src="logodz.png" alt="sakora DZ Logo" class="logo-area">
+    <h1>متجر sakora DZ 🎁</h1>
+    <p style="color: #aaa; margin-top: 0;">المنصة الاحترافية لتجميع النقاط واستبدالها بحسابات فورية</p>
+    
+    <!-- 1️⃣ صفحة الدخول والإنشاء المحمية بكلمة السر -->
+    <div id="auth-section">
+        <h3>تسجيل الدخول / إنشاء حساب</h3>
+        <p style="font-size: 13px; color: #aaa; margin-bottom: 15px;">اكتب اسم حسابك واختر كلمة مرور لحفظ نقاطك بشكل آمن.</p>
+        <input type="text" id="tiktok-username" placeholder="ضع اسم حسابك في التيك توك">
+        <input type="password" id="user-password" placeholder="اكتب كلمة المرور السرية الخاصة بك">
+        <button type="button" id="next-btn" onclick="startLoginProcess()">متابعة التسجيل والدخول 🔗</button>
+    </div>
+
+    <!-- 2️⃣ لوحة التحكم للمستخدم العادي (المتجر وصورة الحساب الفخمة) -->
+    <div id="dashboard-section" class="hidden">
+        <h2>مرحباً بك في متجر sakora DZ، <span id="user-display-name" style="color: #fe2c55;"></span> 👋</h2>
+        <div class="points-box">
+            <span class="points-title">نقاطي:</span>
+            <span class="points-badge"><span id="user-points">0</span> نقطة</span>
+        </div>
+        <div class="account-card">
+            <h3>الحساب المتوفر للبيع حالياً 🔥</h3>
+            <img src="sakoradz.png" alt="sakora DZ Account" class="account-img">
+            <div class="price-tag">السعر المطلوب: 200 نقطة 💰</div>
+            <button type="button" id="buy-btn" onclick="buyAccountProcess()">شراء الحساب الآن 🛒</button>
+            <div id="account-details" class="hidden" style="margin-top: 15px; font-weight: bold; color: #25d366; background: #111; padding: 10px; border-radius: 5px; border: 1px dashed #25d366;"></div>
+        </div>
+        <div class="box" id="task-box">
+            <h3>مهمة ربح نقاط الاشتراك (نقطتين 2) ⚡</h3>
+            <p>اضغط على الزر بالأسفل لتسجيل حسابك وبدء مهمة تيك توك المباشرة كررها كما تشاء:</p>
+            <button type="button" onclick="showInputBeforeRedirect()" style="background-color: #fe2c55; width: 90%;">ابدأ المهمة وسجّل حسابك الآن 🔗</button>
+        </div>
+        <br>
+        <button type="button" onclick="backToLogin()" style="background-color: #555;">خروج من الحساب</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
